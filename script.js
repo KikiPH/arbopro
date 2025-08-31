@@ -6,11 +6,12 @@ function scrollToSection(id) {
     }
     
     // add 'active' class to clicked section button in navigation bar
-    document.getElementById(`button${id}`).classList.add('active');
+    document.getElementById(`button${id}`)?.classList.add('active');
 
     // enable smooth scrolling between sections
     switch (id) {
         case 0:
+            document.getElementById('button').classList.add('active'); // set first section as active
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
             break;
         
