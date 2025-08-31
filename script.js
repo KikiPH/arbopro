@@ -11,7 +11,7 @@ function scrollToSection(id) {
     // enable smooth scrolling between sections
     switch (id) {
         case 0:
-            document.getElementById('button').classList.add('active'); // set first section as active
+            document.getElementById('button1').classList.add('active'); // set first section as active
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
             break;
         
