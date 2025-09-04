@@ -12,6 +12,14 @@ window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset;
     document.querySelector('.parallax-image').style.transform = `translateY(${scrollTop * -0.3}px)`;
 
+    // show scroll to top button after scrolling down 200px
+    let scrollToTopButton = document.getElementById('button-scroll-to-top');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollToTopButton.style.display = 'block';
+    } else {
+        scrollToTopButton.style.display = 'none';
+    }
+
     // dinamically update active button in navigation bar
     let sections = document.getElementsByTagName('section');
     for (let i = 1; i <= sections.length + 1; i++) { // +1 for footer section
@@ -35,7 +43,6 @@ window.addEventListener('scroll', () => {
     // only highlight the footer section button
     let lastSection = document.getElementById(`section${sections.length}-content`);
     let footerSection = document.getElementById(`section${sections.length + 1}-content`);
-    console.log(lastSection, footerSection);
     if (isFullyVisible(lastSection) && isFullyVisible(footerSection)) {
         document.getElementById(`button${sections.length}`).classList.remove('active');
     }
@@ -60,6 +67,11 @@ function isFullyVisible(el) {
     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
+}
+
+// scrolls to top of page
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // scrolls to section and updates active button in navigation bar
