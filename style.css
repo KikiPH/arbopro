@@ -32,12 +32,35 @@ body {
 
 /* Navigation bar */
 nav {
+  display: flex;
   position: sticky;
   top: 0;
   background-color: rgba(77, 26, 0, 0.9);
   z-index: 1000;
+}
+
+.nav-title {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  font-family: 'Lora';
+  font-size: xx-large;
+  cursor: pointer;
+}
+
+.nav-buttons {
   display: flex;
   justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
 }
 
 nav button {
@@ -106,10 +129,34 @@ section div { /* section text */
 
 .footer a {
   color: inherit;
-  padding: inherit;
   text-decoration: inherit; /* remove underline */
 }
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+.mail {
+  width: 60%;
+  padding: 20px;
+}
+
+.mail-form * {
+  margin: 5px 0;
+}
+
+.mail-button {
+  margin: 0;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.mail-button:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.contact {
+  width: 30%;
+  margin-left: auto;
+  padding: 20px;
 }
