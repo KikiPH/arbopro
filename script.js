@@ -100,3 +100,20 @@ function scrollToSection(id) {
 function goToHomepage() {
     window.location = '/';
 }
+
+// copies email address to clipboard
+function copyMail() {
+    const address = document.getElementById('email-address');
+    const icon = document.getElementById('email-icon');
+    navigator.clipboard.writeText(address.innerText);
+
+    // display that the email address has been copied
+    icon.classList.remove('fa-envelope');
+    icon.classList.add('fa-check');
+    
+    // reset icon after 1 second
+    setTimeout(() => {
+        icon.classList.remove('fa-check');
+        icon.classList.add('fa-envelope');
+    }, 1000);
+}

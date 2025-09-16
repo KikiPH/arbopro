@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARBOPRO</title>
-    <link rel="icon" href="./images/tree_icon2.png">
+    <title>Arbopro</title>
+    <link rel="icon" href="./assets/tree_icon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -23,13 +23,14 @@
 
     <!-- Navigation bar -->
     <nav>
-        <div class="nav-title" onclick="goToHomepage()">ARBOPRO</div>
+        <div class="nav-title" onclick="goToHomepage()">Arbopro</div>
         <div class="nav-buttons">
             <button id="button1" class="active" onclick="scrollToSection(1)">Obrezovanje</button>
             <button id="button2" onclick="scrollToSection(2)">Pregled</button>
             <button id="button3" onclick="scrollToSection(3)">Frezanje</button>
             <button id="button4" onclick="scrollToSection(4)">Sajenje</button>
-            <button id="button5" onclick="scrollToSection(5)">O nas</button>
+            <button id="button5" onclick="scrollToSection(5)">Svetovanje</button>
+            <button onclick="location.href = './about.html'">O nas</button>
             <button id="button6" onclick="scrollToSection(6)">Kontakt</button>
         </div>
         <div class="nav-links">
@@ -37,10 +38,10 @@
                 <i class="fa fa-phone" style="padding-right: 5px;"></i>
                 +386 31 808 694
             </a>
-            <a href="mailto:info@arbopro.si">
-                <i class="fa fa-envelope" style="padding-right: 5px;"></i>
-                info@arbopro.si
-            </a>
+            <div class="email" onclick="copyMail()">
+                <i id="email-icon" class="fa fa-envelope"></i>
+                <p id="email-address" class="email-address">info@arbopro.si</p>
+            </div>
         </div>
     </nav>
 
@@ -88,7 +89,7 @@
     </section>
     <section id="section5">
         <div id="section5-content">
-            <h1>Kdo smo? Šolanje in dovoljenja</h1>
+            <h1>Svetovanje</h1>
             <p>
                 Test test test test test test test test test test test.
                 Test test test test test test test test test test test.
@@ -117,8 +118,8 @@
             Ruben Bernard-Dominko<br><br>
             Delovnik: pon - pet<br>
             Uradne ure: 7:00 - 17:00<br><br>
-            <a href="tel:+38631808694"><i class="fa fa-phone" style="padding-right: 5px;"></i>+386 31 808 694</a><br>
-            <a href="mailto:info@arbopro.si"><i class="fa fa-envelope" style="padding-right: 5px;"></i>info@arbopro.si</a><br><br>
+            <i class="fa fa-phone" style="padding-right: 5px;"></i>+386 31 808 694<br>
+            <i class="fa fa-envelope" style="padding-right: 5px;"></i>info@arbopro.si<br><br>
             Turnovše 19<br>
             1360 Vrhnika
         </div>

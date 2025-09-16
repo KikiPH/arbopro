@@ -1,8 +1,15 @@
+@font-face {
+  font-family: 'Lora';
+  src: url(./assets/Lora-Regular.ttf) format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Lora', serif;
   scroll-behavior: smooth;
-  background: repeating-linear-gradient( -45deg, #ffffff 0px, #ffffff 30px, #f5f5f5 31px, #f5f5f5 61px, #ffffff 62px);
+  background-image: url('./assets/background.jpg');
+  background-attachment: fixed;
+  background-size: 100% 100%;
   color: white;
 }
 
@@ -23,7 +30,7 @@ body {
   width: 100%;
   height: 100%;
 
-  background-image: url('./images/tree.png');
+  background-image: url('./assets/tree.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -52,6 +59,7 @@ body {
 
 /* Navigation bar */
 nav {
+  height: 60px;
   display: flex;
   position: sticky;
   top: 0;
@@ -65,8 +73,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
   padding-left: 10px;
-  font-family: 'Lora';
-  font-size: xx-large;
+  font-size: 40px;
   cursor: pointer;
 }
 
@@ -90,6 +97,7 @@ nav button {
   padding: 10px 20px;
   margin: 0 5px;
   cursor: pointer;
+  font-family: 'Lora', serif;
   font-size: 16px;
   transition: background 0.3s, color 0.3s;
 }
@@ -99,8 +107,8 @@ nav button:hover {
 }
 
 nav button.active {
-  color: greenyellow;
-  border-bottom: 2px solid greenyellow;
+  color: #8ACC25;
+  border-bottom: 2px solid #8ACC25;
 }
 
 nav a {
@@ -110,6 +118,18 @@ nav a {
 }
 
 nav a:hover {
+  text-decoration: underline;
+}
+
+nav .email {
+   cursor: copy;
+}
+
+nav .email-address {
+  display: inline-block;
+}
+
+nav .email:hover .email-address {
   text-decoration: underline;
 }
 
@@ -134,7 +154,7 @@ section:nth-child(odd) {
 
 section div { /* section text */
   max-width: 400px;
-  background-color: rgba(77, 26, 0, 0.9);
+  background-color: rgba(77, 26, 0, 0.85);
   border-radius: 5px;
   margin: 10px;
   padding: 0 20px;
@@ -142,7 +162,7 @@ section div { /* section text */
 
 /* About page */
 .about {
-  background-color: rgba(77, 26, 0, 0.9);
+  background-color: rgba(77, 26, 0, 0.85);
   margin: 60px 300px;
   padding: 30px;
 }

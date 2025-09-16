@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARBOPRO</title>
-    <link rel="icon" href="./images/tree_icon2.png">
+    <title>Arbopro</title>
+    <link rel="icon" href="./assets/tree.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -18,70 +18,90 @@
 
     <!-- Navigation bar -->
     <nav>
-        <div class="nav-title" onclick="goToHomepage()">ARBOPRO</div>
+        <div class="nav-title" onclick="goToHomepage()">Arbopro</div>
+        <div class="nav-buttons">
+            <button onclick="location.href = './'">Domov</button>
+        </div>
         <div class="nav-links">
             <a href="tel:+38631808694">
                 <i class="fa fa-phone" style="padding-right: 5px;"></i>
                 +386 31 808 694
             </a>
-            <a href="mailto:info@arbopro.si">
-                <i class="fa fa-envelope" style="padding-right: 5px;"></i>
-                info@arbopro.si
-            </a>
+            <div class="email" onclick="copyMail()">
+                <i id="email-icon" class="fa fa-envelope"></i>
+                <p id="email-address" class="email-address">info@arbopro.si</p>
+            </div>
         </div>
     </nav>
 
     <!-- About -->
-     <div class="about">
-        <p class="title">O meni</p>
-        <p>Pozdravljeni! Dobrodošli na moji spletni strani, kjer želim skozi besede predstaviti svojo zgodbo,
-        strasti in vrednote. Ljubezen do narave in dreves me spremlja že od otroštva. Moje delo združuje
-        ustvarjalnost, tehnično znanje in pristne človeške povezave. Verjamem, da je vsako drevo, tako
-        kot človek, edinstveno – s svojo zgodbo, preteklostjo in prihodnostjo.</p><br>
-        
+    <div class="about">
         <p class="title">Moja pot</p>
-        <p>Pot me je vodila na Biotehniško fakulteto v Ljubljani, kjer sem študiral gozdarstvo. Svoje znanje
-        sem nato nadgradil z arborističnim tečajem pod okriljem nemške arboristične šole Nürnberger,
-        kjer sem pridobil certifikata SKT A in SKT B, ki mi omogočata varno in strokovno delo z drevesi
-        na višini. Arboristika me je pritegnila, ker združuje tehnično zahtevno delo z ljubeznijo do
-        narave.
-        Že štiri leta profesionalno izvajam obrezovanje dreves in druge zahtevne arboristične posege.
-        Svoje delo opravljam samostojno in v sodelovanju z usposobljeno ekipo, ki razpolaga z vso
-        potrebno zaščitno in tehnično opremo.</p><br>
+        <p>
+            Pot me je vodila na Biotehniško fakulteto v Ljubljani, kjer sem študiral gozdarstvo. Svoje znanje
+            sem nato nadgradil z arborističnim tečajem pod okriljem nemške arboristične šole Nürnberger,
+            kjer sem pridobil certifikata SKT A in SKT B, ki mi omogočata varno in strokovno delo z drevesi
+            na višini. Arboristika me je pritegnila, ker združuje tehnično zahtevno delo z ljubeznijo do
+            narave.
+            Že štiri leta profesionalno izvajam obrezovanje dreves in druge zahtevne arboristične posege na eni
+            izmed največjih film v Sloveniji. Svoje delo opravljam samostojno in v sodelovanju z usposobljeno ekipo,
+            ki razpolaga z vso potrebno zaščitno in tehnično opremo.
+        </p><br>
         
         <p class="title">Izobrazba in strokovne izkušnje</p>
-        <p>- Študij gozdarstva na Biotehniški fakulteti v Ljubljani.<br>
-        - Arboristični tečaj pod okriljem arboristične šole Nürnberger (Nemčija) – certifikata SKT A in
-        SKT B.<br>
-        - Večletne izkušnje s strokovnim obrezovanjem, zahtevnimi poseki, odstranjevanjem nevarnih
-        dreves, sadnjo, nego mladih dreves in izboljševanjem rastnih pogojev starejših dreves.</p><br>
-        
-        <p class="title">Moj pristop in vrednote</p>
-        <p>Pri delu me vodi odgovornost do narave in ljudi. Varnost, strokovnost in dolgoročna vitalnost
-        dreves so mi na prvem mestu. Posvetim se vsakemu projektu individualno, pri tem pa ohranjam
-        spoštljiv odnos do okolice in naravnega ravnovesja.</p><br>
-        
-        <p class="title">Vrednote, ki jih živim v vsakdanjem delu:</p>
-        <p>- spoštovanje in skrb za naravo,<br>
-        - strokovna in varna izvedba,<br>
-        - jasna in odprta komunikacija z naročnikom,<br>
-        - stalno izpopolnjevanje znanja.</p><br>
+        <p>
+            - Študij gozdarstva na Biotehniški fakulteti v Ljubljani.<br>
+            - Arboristični tečaj pod okriljem arboristične šole Nürnberger (Nemčija) - certifikata SKT A in
+            SKT B.<br>
+            - Večletne izkušnje s strokovnim obrezovanjem, zahtevnimi poseki, odstranjevanjem nevarnih
+            dreves, sadnjo, nego mladih dreves in izboljševanjem rastnih pogojev starejših dreves.<br>
+            - Nacionalna poklicna kvalifikacija (NPK) gozdarski sekač.
+        </p><br>
 
-        <p class="title">Interesi in prosti čas</p>
-        <p>Plezanje je moj hobi že vrsto let in prav ta strast se je popolno ujela z mojo poklicno potjo. Delo
-        na višini mi je naravno in omogoča, da drevesa obdelujem z gotovostjo in natančnostjo. V
-        prostem času raziskujem naravo, se ukvarjam s športom ter iščem nove izzive, ki me spodbujajo k
-        rasti.</p><br>
+        <div style="display: flex; align-items: center;">
+            <div>
+                <p class="title">Moj pristop in vrednote</p>
+                <p>
+                    Pri delu me vodi odgovornost do narave in ljudi. Varnost, strokovnost in dolgoročna vitalnost
+                    dreves so mi na prvem mestu. Posvetim se vsakemu projektu individualno, pri tem pa ohranjam
+                    spoštljiv odnos do okolice in naravnega ravnovesja.
+                </p><br>
 
-        <p class="title">Cilji in vizija za prihodnost</p>
-        <p>Moj cilj je dvigniti kakovost arborističnih storitev z nenehnim izpopolnjevanjem znanja ter
-        uporabo naprednih tehnik in opreme. Želim ustvarjati okolje, kjer bodo spoštovanje do narave,
-        strokovnost in estetska vrednost krajine temeljne vrednote.</p><br>
-        
-        <p class="title">Povezovanje z vami</p>
-        <p>Če se prepoznate v mojem pristopu ali iščete strokovno izvedbo arborističnih del, vas vabim, da
-        stopimo v stik. Skupaj lahko poiščemo najboljše rešitve za varno, zdravo in lepo okolje.</p>
-     </div>
+                <p class="title">Vrednote, ki jih živim v vsakdanjem delu:</p>
+                <p>
+                    - spoštovanje in skrb za naravo,<br>
+                    - strokovna in varna izvedba,<br>
+                    - jasna in odprta komunikacija z naročnikom,<br>
+                    - stalno izpopolnjevanje znanja.
+                </p><br>
+
+                <p class="title">Interesi in prosti čas</p>
+                <p>
+                    Plezanje in alpinizem sta moja hobija že vrsto let in prav ta strast se je popolnoma ujela z mojo
+                    poklicno potjo. Delo
+                    na višini mi je naravno kar omogoča, da drevesa obdelujem z gotovostjo in natančnostjo. V
+                    prostem času raziskujem naravo, se ukvarjam s športom ter iščem nove izzive, ki me spodbujajo k
+                    rasti.
+                </p><br>
+
+                <p class="title">Cilji in vizija za prihodnost</p>
+                <p>
+                    Moj cilj je dvigniti kakovost arborističnih storitev z nenehnim izpopolnjevanjem znanja ter
+                    uporabo naprednih tehnik in opreme. Želim ustvarjati okolje, kjer bodo spoštovanje do narave,
+                    strokovnost in estetska vrednost krajine temeljne vrednote.
+                </p><br>
+
+                <p class="title">Povezovanje z vami</p>
+                <p>
+                    Če se prepoznate v mojem pristopu ali iščete strokovno izvedbo arborističnih del, vas vabim, da
+                    stopimo v stik. Skupaj lahko poiščemo najboljše rešitve za varno, zdravo in lepo okolje.
+                </p>
+            </div>
+            <div style="padding-left: 20px;">
+                <img src="./assets/arborist.jpg">
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <div id="section6" class="footer">
@@ -98,8 +118,8 @@
             Ruben Bernard-Dominko<br><br>
             Delovnik: pon - pet<br>
             Uradne ure: 7:00 - 17:00<br><br>
-            <a href="tel:+38631808694"><i class="fa fa-phone" style="padding-right: 5px;"></i>+386 31 808 694</a><br>
-            <a href="mailto:info@arbopro.si"><i class="fa fa-envelope" style="padding-right: 5px;"></i>info@arbopro.si</a><br><br>
+            <i class="fa fa-phone" style="padding-right: 5px;"></i>+386 31 808 694<br>
+            <i class="fa fa-envelope" style="padding-right: 5px;"></i>info@arbopro.si<br><br>
             Turnovše 19<br>
             1360 Vrhnika
         </div>
