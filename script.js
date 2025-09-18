@@ -102,9 +102,9 @@ function goToHomepage() {
 }
 
 // copies email address to clipboard
-function copyMail() {
-    const address = document.getElementById('email-address');
-    const icon = document.getElementById('email-icon');
+function copyMail(iconId, addressId) {
+    const icon = document.getElementById(iconId);
+    const address = document.getElementById(addressId);
     navigator.clipboard.writeText(address.innerText);
 
     // display that the email address has been copied

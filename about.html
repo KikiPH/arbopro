@@ -18,7 +18,10 @@
 
     <!-- Navigation bar -->
     <nav>
-        <div class="nav-title" onclick="goToHomepage()">Arbopro</div>
+        <div class="nav-title" onclick="goToHomepage()">
+            <img src="./assets/logo_white.png" style="width: 50px; height: 50px;">
+            Arbopro
+        </div>
         <div class="nav-buttons">
             <button onclick="location.href = './'">Domov</button>
         </div>
@@ -27,9 +30,9 @@
                 <i class="fa fa-phone" style="padding-right: 5px;"></i>
                 +386 31 808 694
             </a>
-            <div class="email" onclick="copyMail()">
-                <i id="email-icon" class="fa fa-envelope"></i>
-                <p id="email-address" class="email-address">info@arbopro.si</p>
+            <div class="email" onclick="copyMail('email-icon-header', 'email-address-header')">
+                <i id="email-icon-header" class="fa fa-envelope"></i>
+                <p id="email-address-header" class="email-address">info@arbopro.si</p>
             </div>
         </div>
     </nav>
@@ -106,17 +109,26 @@
     <!-- Footer -->
     <div id="section6" class="footer">
         <div id="section6-content" class="footer-content">
-            <div>
-                Arbopro<br>
-                Ruben Bernard-Dominko
+            <div style="display: flex; align-items: center;">
+                <img src="./assets/logo_white.png" style="width: 60px; height: 60px;">
+                <div>
+                    Arbopro<br>
+                    Ruben Bernard-Dominko
+                </div>
             </div>
             <div>
                 Davčna številka: xxxx xxxx<br>
                 Matična številka: xxxx xxxx
             </div>
             <div>
-                <i class="fa fa-phone" style="padding-right: 5px;"></i>+386 31 808 694<br>
-                <i class="fa fa-envelope" style="padding-right: 5px;"></i>info@arbopro.si
+                <a href="tel:+38631808694">
+                    <i class="fa fa-phone" style="padding-right: 5px;"></i>
+                    +386 31 808 694
+                </a><br>
+                <span class="email" onclick="copyMail('email-icon-footer', 'email-address-footer')">
+                    <i id="email-icon-footer" class="fa fa-envelope"></i>
+                    <span id="email-address-footer" class="email-address">info@arbopro.si</span>
+                </span>
             </div>
             <div>
                 Turnovše 19<br>
