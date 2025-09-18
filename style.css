@@ -19,7 +19,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   z-index: -1;
 }
 
@@ -63,7 +62,7 @@ nav {
   display: flex;
   position: sticky;
   top: 0;
-  background-color: rgba(77, 26, 0, 0.9);
+  background-color: rgba(77, 26, 0);
   z-index: 1000;
 }
 
@@ -133,6 +132,28 @@ nav .email:hover .email-address {
   text-decoration: underline;
 }
 
+/* Hero page */
+.hero {
+  display: flex;
+  align-items: center;
+  height: 500px;
+  margin: 30px 0;
+  padding: 30px 100px 30px 50px;
+  text-align: center;
+  background-color: rgba(77, 26, 0, 0.85);
+}
+
+.hero .title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.hero .text {
+  font-size: 20px;
+  padding: 0 80px;
+  text-align: left;
+}
+
 /* Sections */
 section {
   height: 100vh;
@@ -142,12 +163,12 @@ section {
   box-sizing: border-box;
 }
 
-section:nth-child(even) {
+section:nth-child(odd) {
   justify-content: flex-start;
   text-align: left;
 }
 
-section:nth-child(odd) {
+section:nth-child(even) {
   justify-content: flex-end;
   text-align: right;
 }
@@ -163,17 +184,18 @@ section div { /* section text */
 /* About page */
 .about {
   background-color: rgba(77, 26, 0, 0.85);
+  border-radius: 5px;
   margin: 60px 300px;
   padding: 30px;
 }
 
 .about .title {
+  font-size: 18px;
   font-weight: bold;
 }
 
 /* Footer */
 .footer {
-  display: flex;
   padding: 10px;
   background-color: rgba(77, 26, 0, 0.9);
 }
@@ -187,27 +209,13 @@ section div { /* section text */
   text-decoration: underline;
 }
 
-.mail {
-  width: 60%;
-  padding: 20px;
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 50px;
 }
 
-.mail-form * {
-  margin: 5px 0;
-}
-
-.mail-button {
-  margin: 0;
-  padding: 4px 8px;
-  cursor: pointer;
-}
-
-.mail-button:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.contact {
-  width: 30%;
-  margin-left: auto;
-  padding: 20px;
+.footer-content div {
+  padding: 15px;
+  line-height: 2;
 }

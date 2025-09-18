@@ -4,7 +4,7 @@ window.onload = () => {
     let backgroundImage = document.querySelector('.parallax-image');
     if (backgroundImage) {
         backgroundImage.style.height = `${document.body.offsetHeight - window.innerHeight}px`;
-        backgroundImage.style.top = `${-1.2*window.innerHeight}px`;
+        backgroundImage.style.top = `${-0.8*window.innerHeight}px`; // lower value = higher image starting position (-0.9 right under hero section)
     }
 }
 
@@ -14,7 +14,7 @@ window.addEventListener('scroll', () => {
     // scroll parallax image
     let scrollTop = window.pageYOffset;
     let backgroundImage = document.querySelector('.parallax-image');
-    if (backgroundImage) backgroundImage.style.transform = `translateY(${scrollTop * -0.3}px)`;
+    if (backgroundImage) backgroundImage.style.transform = `translateY(${scrollTop * -0.4}px)`; // lower value = faster scroll speed
 
     // show scroll to top button after scrolling down 200px
     let scrollToTopButton = document.getElementById('button-scroll-to-top');
