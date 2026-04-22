@@ -9,6 +9,7 @@
   --text: #1c1c1c;
   --muted: #6a6a6a;
   --white: #fff;
+  --err: #b94a48;
 }
 
 html { scroll-behavior: smooth; }
@@ -126,7 +127,6 @@ h2::after {
 .about-text p {
   font-size: 1rem; line-height: 1.85; opacity: .88; margin-bottom: 1.25rem;
 }
-.signature { font-style: italic; opacity: .75; }
 
 /* ── SERVICES ── */
 #storitve { background: #3a5c28; }
@@ -159,30 +159,56 @@ h2::after {
 /* ── INQUIRY FORM ── */
 #povprasevanje { background: var(--light); }
 .inquiry-form { max-width: 680px; }
+
 .field { display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.5rem; }
+
 .field label {
   font-size: .75rem; font-weight: 600; letter-spacing: .1em;
   text-transform: uppercase; color: var(--muted);
 }
+
+/* Required asterisk */
+.required-mark { color: var(--err); margin-left: .15em; }
+
 .field input, .field textarea {
   font-family: inherit; font-size: .95rem; color: var(--text);
   background: var(--white); border: 1.5px solid #d8d2c8;
   border-radius: 2px; padding: .75rem 1rem;
   transition: border-color .2s; outline: none; width: 100%;
+  -webkit-appearance: none; /* fixes iOS rounded inputs */
 }
 .field input:focus, .field textarea:focus { border-color: var(--gm); }
 .field textarea { resize: vertical; min-height: 120px; }
+
+/* JS-driven invalid state (works on all browsers including old iOS Safari) */
+.field input.invalid,
+.field textarea.invalid {
+  border-color: var(--err);
+}
+.field input.invalid:focus,
+.field textarea.invalid:focus {
+  border-color: var(--err);
+  box-shadow: 0 0 0 3px rgba(185,74,72,.12);
+}
+
+/* Inline field error message */
+.field-error {
+  font-size: .78rem; color: var(--err);
+  font-style: italic; margin-top: .1rem;
+}
+
 .btn-submit {
   background: var(--gd); color: var(--white); border: none;
   padding: .9rem 2.5rem; font-family: inherit; font-size: .85rem;
   font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
   border-radius: 2px; cursor: pointer; transition: background .25s;
+  -webkit-appearance: none;
 }
 .btn-submit:hover { background: var(--gm); }
 .btn-submit:disabled { opacity: .6; cursor: not-allowed; }
 .form-msg { margin-top: .85rem; font-size: .88rem; font-style: italic; }
 .form-msg--ok  { color: var(--gm); }
-.form-msg--err { color: #b94a48; }
+.form-msg--err { color: var(--err); }
 
 /* ── CONTACT ── */
 #kontakt { background: var(--cream); }
