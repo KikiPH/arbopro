@@ -86,10 +86,10 @@
   <section id="povprasevanje">
     <div class="container">
       <h2>Pošlji povpraševanje</h2>
-      <!-- novalidate: JS handles validation with Slovenian messages -->
+      <!-- novalidate -->
       <form id="inquiryForm" class="inquiry-form" novalidate>
 
-        <!-- Honeypot: hidden from real users, bots fill it → ignored server-side -->
+        <!-- honeypot for bots -->
         <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" tabindex="-1">
           <label for="f-trap">Ne izpolnite tega polja</label>
           <input type="text" id="f-trap" name="_trap" autocomplete="off" tabindex="-1">
