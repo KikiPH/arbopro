@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arbopro – Arboristika | Obrezovanje dreves</title>
-  <meta name="description" content="Arbopro – profesionalne arboristične storitve: obrezovanje in nega dreves, zahtevni poseki, sadnja, odstranjevanje štorov, mletje biomase. Pokrivamo Vrhniko in okolico.">
+  <title>Arbopro - Arboristika | Obrezovanje dreves</title>
+  <meta name="description" content="Arbopro - profesionalne arboristične storitve: obrezovanje in nega dreves, zahtevni poseki, sadnja, odstranjevanje štorov, mletje biomase. Pokrivamo Vrhniko in okolico.">
   <meta name="keywords" content="arboristika, obrezovanje dreves, posek dreves, odstranjevanje štorov, sadnja dreves, Vrhnika, arborist">
   <meta name="author" content="Ruben Bernard-Dominko">
-  <!-- Google SEO -->
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://arbopro.si/">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Arbopro">
   <meta property="og:description" content="Arboristika · Nega dreves · Svetovanje">
   <meta property="og:url" content="https://arbopro.si/">
@@ -22,7 +20,7 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -88,21 +86,33 @@
   <section id="povprasevanje">
     <div class="container">
       <h2>Pošlji povpraševanje</h2>
+      <!-- novalidate -->
       <form id="inquiryForm" class="inquiry-form" novalidate>
+
+        <!-- honeypot for bots -->
+        <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" tabindex="-1">
+          <label for="f-trap">Ne izpolnite tega polja</label>
+          <input type="text" id="f-trap" name="_trap" autocomplete="off" tabindex="-1">
+        </div>
+
         <div class="field">
-          <label for="f-email">Vaš e-naslov</label>
-          <input type="email" id="f-email" name="email" placeholder="ime@example.com" required>
+          <label for="f-email">Vaš e-naslov <span class="required-mark">*</span></label>
+          <input type="email" id="f-email" name="email" placeholder="ime@example.com" autocomplete="email" required>
         </div>
         <div class="field">
-          <label for="f-title">Zadeva</label>
-          <input type="text" id="f-title" name="title" placeholder="Npr. Povpraševanje za obrezovanje dreves" required>
+          <label for="f-phone">Telefonska številka</label>
+          <input type="tel" id="f-phone" name="phone" placeholder="Npr. +386 31 123 456" inputmode="tel" autocomplete="tel">
         </div>
         <div class="field">
-          <label for="f-desc">Opis</label>
+          <label for="f-title">Zadeva <span class="required-mark">*</span></label>
+          <input type="text" id="f-title" name="title" placeholder="Npr. Povpraševanje za obrezovanje dreves" autocomplete="off" required>
+        </div>
+        <div class="field">
+          <label for="f-desc">Opis <span class="required-mark">*</span></label>
           <textarea id="f-desc" name="description" rows="5" placeholder="Opišite vaše potrebe..." required></textarea>
         </div>
         <button type="submit" class="btn-submit" id="formSubmit">Pošlji povpraševanje</button>
-        <p class="form-msg" id="formMsg"></p>
+        <p class="form-msg" id="formMsg" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -132,9 +142,9 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Arbopro &middot; arbopro.si</p>
+    <p>&copy; 2026 Arbopro &middot; arbopro.si</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
