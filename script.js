@@ -1,3 +1,12 @@
+const serviceCards = document.querySelectorAll('.service-card');
+serviceCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const isActive = card.classList.contains('active');
+    serviceCards.forEach(c => c.classList.remove('active'));
+    if (!isActive) card.classList.add('active');
+  });
+});
+
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');

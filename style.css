@@ -7,9 +7,8 @@
 }
 
 :root {
-  --gd: #1a3a0f;
-  --gm: #2d6a1a;
-  --gl: #6aad3a;
+  --gd: #3b5c28;
+  --gl: #719f56;
   --cream: #f4f0e8;
   --light: #faf8f4;
   --text: #1c1c1c;
@@ -53,6 +52,9 @@ body {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: .1em;
@@ -61,8 +63,39 @@ body {
   transition: color .3s;
 }
 
+.logo-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity .3s;
+}
+
+.logo-img--dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  filter: brightness(0) invert(100%) sepia(100%) hue-rotate(38deg) brightness(27%) saturate(1200%);
+}
+
 #navbar.scrolled .nav-logo {
   color: var(--gd);
+}
+
+#navbar.scrolled .logo-img--white {
+  opacity: 0;
+}
+
+#navbar.scrolled .logo-img--dark {
+  opacity: 1;
 }
 
 .nav-links {
@@ -137,7 +170,7 @@ body {
 #hero {
   height: 100vh;
   min-height: 580px;
-  background: url('assets/image1.jpg') center/cover no-repeat;
+  background: url('assets/hero_section.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,7 +290,7 @@ h2::after {
 
 /* ── SERVICES ── */
 #storitve {
-  background: #3a5c28;
+  background: var(--gd);
 }
 
 #storitve h2 {
@@ -271,33 +304,98 @@ h2::after {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 90px;
+  grid-auto-rows: 240px;
   gap: 1.25rem;
 }
 
 .service-card {
+  position: relative;
+}
+
+.services-grid .service-card:nth-child(n+6) .service-card-inner {
+  top: auto;
+  bottom: 0;
+}
+
+.service-card-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
   background: var(--white);
-  padding: 0 1.5rem 0 2rem;
   border-left: 4px solid var(--gl);
   border-radius: 2px;
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  pointer-events: none;
+  transition: left .35s ease, right .35s ease, height .35s ease, box-shadow .35s ease;
+  z-index: 1;
+}
+
+@keyframes imgZoomOutDown {
+  from { transform: translateY(25%) scale(1.5); }
+  to { transform: translateY(0) scale(1); }
+}
+
+@keyframes imgZoomOutUp {
+  from { transform: translateY(-25%) scale(1.5); }
+  to { transform: translateY(0) scale(1); }
+}
+
+@media (hover: hover) {
+  .service-card:hover .service-card-inner {
+    left: calc(50% - 220px);
+    right: calc(50% - 220px);
+    height: 500px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .2);
+    z-index: 20;
+  }
+
+  .service-card:hover .service-img {
+    animation: imgZoomOutDown .35s ease forwards;
+  }
+
+  .services-grid .service-card:nth-child(n+6):hover .service-img {
+    animation: imgZoomOutUp .35s ease forwards;
+  }
+
+}
+
+.service-card-inner h3 {
+  flex-shrink: 0;
+  height: 90px;
+  display: flex;
   align-items: center;
-  transition: transform .2s, box-shadow .2s;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
-}
-
-.service-card h3 {
+  padding: 0 1.5rem 0 2rem;
   font-size: .95rem;
   font-weight: 600;
   line-height: 1.55;
 }
 
+.service-img-wrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+
+.service-img--placeholder {
+  object-fit: contain;
+  padding: 25%;
+  box-sizing: border-box;
+  background: var(--gd);
+}
+
 .about-photo {
-  background: url('assets/image2.jpg') center/cover no-repeat;
+  background: url('assets/o_nas.jpg') center/cover no-repeat;
 }
 
 /* ── INQUIRY FORM ── */
@@ -348,7 +446,7 @@ h2::after {
 
 .field input:focus,
 .field textarea:focus {
-  border-color: var(--gm);
+  border-color: var(--gd);
 }
 
 .field textarea {
@@ -393,7 +491,7 @@ h2::after {
 }
 
 .btn-submit:hover {
-  background: var(--gm);
+  background: var(--gd);
 }
 
 .btn-submit:disabled {
@@ -408,7 +506,7 @@ h2::after {
 }
 
 .form-msg--ok {
-  color: var(--gm);
+  color: var(--gd);
 }
 
 .form-msg--err {
@@ -452,12 +550,12 @@ h2::after {
 }
 
 a.cv:hover {
-  color: var(--gm);
+  color: var(--gd);
 }
 
 /* ── FOOTER ── */
 footer {
-  background: #0f2108;
+  background: var(--gd);
   color: rgba(255, 255, 255, .45);
   text-align: center;
   padding: 1.75rem 2rem;
@@ -524,6 +622,27 @@ footer {
 
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .service-card {
+    cursor: pointer;
+  }
+
+  .service-card-inner {
+    position: static;
+    height: auto;
+  }
+
+  .service-img-wrap {
+    flex: none;
+    height: 0;
+    overflow: hidden;
+    transition: height .3s ease;
+  }
+
+  .service-card.active .service-img-wrap {
+    height: 320px;
   }
 }
 
