@@ -62,6 +62,7 @@ body {
   color: var(--white);
   text-decoration: none;
   transition: color .3s;
+  min-width: 210px;
 }
 
 .logo-mark {
@@ -345,6 +346,7 @@ h2::after {
   pointer-events: none;
   transition: left .35s ease, right .35s ease, height .35s ease, box-shadow .35s ease;
   z-index: 1;
+  will-change: left, right, height;
 }
 
 @keyframes imgZoomOutDown {
@@ -398,6 +400,8 @@ h2::after {
   object-fit: cover;
   display: block;
   transition: transform .3s ease;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .service-img--placeholder {
